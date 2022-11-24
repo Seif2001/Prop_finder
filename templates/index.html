@@ -1,0 +1,39 @@
+{%extends 'base.html'%} {%block head %} {%endblock%} {%block body %}
+<h3>Enter your information</h3>
+<h1>{{message}}</h1>
+<form action="\login" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="name" /><br />
+  <label for="age">Age: </label>
+  <input type="number" name="age" /><br />
+
+  <label for="birthdate">Birth Date: </label>
+  <input type="date" name="birthdate" /><br />
+  <label for="gender"> Gender </label>
+  <select name="gender">
+    <option value="M">M</option>
+    <option value="F">F</option>
+  </select>
+  <br /><br />
+  <label for="Area 1">Area 1 </label>
+  <select name="Area 1">
+    {%for l in list%}
+    <option value="{{l}}">{{l[0]}}</option>
+    {%endfor%}
+  </select>
+  <label for="Area 2">Area 2 </label>
+  <select name="Area 2">
+    {%for l in list%}
+    <option value="{{l}}">{{l[0]}}</option>
+    {%endfor%}
+  </select>
+  <label for="Area 3">Area 3 </label>
+  <select name="Area 3">
+    {%for l in list%}
+    <option value="{{l}}">{{l[0]}}</option>
+    {%endfor%}
+  </select>
+  <br /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
+{%endblock%}

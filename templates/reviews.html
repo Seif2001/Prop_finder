@@ -1,0 +1,9 @@
+{%extends 'base.html'%} {%block head %} {%endblock%} {%block body %} {%for r in
+reviews%}
+<p>{{r[0]}}</p>
+{%endfor%}
+<br />
+<form action="/return" , method="post">
+  <input type="submit" value="Back" />
+</form>
+{%endblock%}

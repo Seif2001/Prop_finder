@@ -1,0 +1,34 @@
+{%extends 'base.html'%} {%block head %} {%endblock%} {%block body %}
+<h3>Enter your information</h3>
+<h1>{{message}}</h1>
+<form action="\reviewed" method="post">
+  <label for="AgentSelect">Select Agent You want to Review </label>
+  <select name="AgentSelect">
+    {%for Agent in AgentPNums%}
+    <option value="{{Agent[0]}}">{{Agent[0]}}</option>
+    {%endfor%}
+  </select>
+  <br /><br />
+  <label for="rating">Rate the Agent</label>
+  <br />
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <br /><br /><br />
+  <label for="review">Review agent</label>
+  <textarea cols="50" rows="4" name="rev"></textarea>
+  <input type="submit" name="submit" value="Review" />
+</form>
+<form action="/return" method="post">
+  <input type="submit" value="Back" />
+</form>
+{%endblock%}

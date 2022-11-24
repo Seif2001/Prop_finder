@@ -1,0 +1,29 @@
+{%extends 'base.html'%} {%block head %} {%endblock%} {%block body %}
+<h2>Average Price per SQM</h2>
+<table>
+  <tr>
+    {%for header in headings%}
+    <th>{{header}}</th>
+    {%endfor%}
+  </tr>
+  {%for row in props%}
+  <tr>
+    {%for cell in row%}
+    <th>{{cell}}</th>
+    {%endfor%}
+  </tr>
+  {%endfor%}
+</table>
+{%for p in pics%}
+
+<div>
+  <img src="{{p[12]}}" />
+  <h4>Title: {{p[1]}}</h4>
+  <h6>{{p[2]}}</h6>
+  <p>Bedrooms: {{p[3]}} Bathrooms: {{p[4]}}</p>
+  <p>Size: {{p[5]}} sqm</p>
+  <h6>{{p[7]}} egp</h6>
+  <p>{{p[10]}}, {{p[11]}}</p>
+  <p>{{p[9]}}</p>
+</div>
+{%endfor%} {%endblock%}

@@ -1,0 +1,114 @@
+{%extends 'base.html'%} {%block head %} {%endblock%} {%block body %}
+<h3>{{message}}</h3>
+<h3>Hi, {{user}} Select What you want to do</h3>
+<form action="\review" method="post">
+  <label for="review">Review an Agent</label>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\viewreview" method="post">
+  <label for="veiwreview">view a review of an Agent</label>
+  <select name="AgentSelect2">
+    {%for Agent in pNums%}
+    <option value="{{Agent[0]}}">{{Agent[0]}}</option>
+    {%endfor%}
+  </select>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\viewaggreview" method="post">
+  <label for="viewagg">View Aggregate ratings for each broker company</label>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\viewDevelopments" method="post">
+  <select name="proj">
+    {%for p in projects%}
+    <option value="{{p[0]}}">{{p[0]}}</option>
+    {%endfor%}
+  </select>
+  <label for="viewDev">View all developments</label>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\selectCityForProps" method="post">
+  <label for="viewpropsbycity">view Properties by city</label>
+  <select name="citySelect">
+    {%for c in citys%}
+    <option value="{{c[0]}}">{{c[0]}}</option>
+    {%endfor%}
+  </select>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\selectAmennitiesForProps" method="post">
+  <label for="viewpropsbyammenities"
+    >View Properties by ammenities and price range</label
+  >
+  <select name="a1">
+    {%for a in list%}
+    <option value="{{a[0]}}">{{a[0]}}</option>
+    {%endfor%}
+  </select>
+  <select name="a2">
+    {%for a in list%}
+    <option value="{{a[0]}}">{{a[0]}}</option>
+    {%endfor%}
+  </select>
+  <select name="a3">
+    {%for a in list%}
+    <option value="{{a[0]}}">{{a[0]}}</option>
+    {%endfor%}
+  </select>
+  <label>Min Price</label>
+  <input type="number" name="min" />
+  <label>Max Price</label>
+  <input type="number" name="max" />
+  <select name="city">
+    {%for c in citys%}
+    <option value="{{c[0]}}">{{c[0]}}</option>
+    {%endfor%}
+  </select>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\selectcityforarea" method="post">
+  <label for="view10areas"
+    >View top 10 areas in a given city by amount of inventory and price / sqm of
+    a given unit type</label
+  >
+  <select name="city2">
+    {%for c in citys%}
+    <option value="{{c[0]}}">{{c[0]}}</option>
+    {%endfor%}
+  </select>
+  <select name="type">
+    {%for c in types%}
+    <option value="{{c[0]}}">{{c[0]}}</option>
+    {%endfor%}
+  </select>
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\view5bcompanies" method="post">
+  <label for="view5bCompanies"
+    >top 5 brokerage companies by the amount of listings they have, along with
+    their avg price / sqm, number of agents, and average listings per
+    agent</label
+  >
+  <input type="submit" value="Select" />
+</form>
+
+<form action="\selectAgentPhoneNumber" method="post">
+  <label for="selectagentPNumber"
+    >the properties listed by a specific agent (given their phone no)</label
+  >
+  <select name="AgentSelect3">
+    {%for Agent in pNums%}
+    <option value="{{Agent[0]}}">{{Agent[0]}}</option>
+    {%endfor%}
+  </select>
+  <input type="submit" value="Select" />
+</form>
+
+{%endblock%}
