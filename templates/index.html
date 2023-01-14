@@ -1,7 +1,8 @@
 {%extends 'base.html'%} {%block head %} {%endblock%} {%block body %}
-<h3>Enter your information</h3>
+<h3 id="Enter">Enter your information</h3>
 <h1>{{message}}</h1>
-<form action="\login" method="post">
+
+<form action="\login" method="post" class="loginForm">
   <label for="name">Name: </label>
   <input type="text" name="name" /><br />
   <label for="age">Age: </label>
@@ -34,6 +35,6 @@
     {%endfor%}
   </select>
   <br /><br /><br />
-  <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" id="sub" />
 </form>
 {%endblock%}

@@ -88,9 +88,10 @@ mycursor = mydb.cursor()
 mycursor.execute(sql14)
 types = mycursor.fetchall()
 
-@app.route('/')
+@app.route('/' , methods = ['POST', 'GET'])
 def index():
-
+    if request.method == 'POST':
+        return render_template("index.html",  list = DistinctAreas, message = "")
     #headings = ['id']
     return render_template("index.html",  list = DistinctAreas, message = "")
 
