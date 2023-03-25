@@ -1,6 +1,5 @@
 # Prop_finder
 
-# This project was part of the Fundementals of Database Course at the American University in Cairo given by Dr. Hossam Sharara.
 
 ## To run this project follow the following steps:
 
